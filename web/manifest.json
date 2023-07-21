@@ -1,6 +1,6 @@
 {
-    "name": "sk",
-    "short_name": "sk",
+    "name": "recipe_application",
+    "short_name": "recipe_application",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

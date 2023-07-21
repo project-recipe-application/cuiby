@@ -1,4 +1,4 @@
-package com.example.sk
+package com.example.recipe_application
 
 import io.flutter.embedding.android.FlutterActivity
 
