@@ -75,109 +75,113 @@ class _MyAppState extends State<MyApp> {
       title: 'searching',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('헤헤 재밌다'),
+          title: const Text('재료 검색'),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextField(
-                decoration: const InputDecoration(
-                  hintText: '검색어를 입력해주세요',
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  setState(() {
-                    searchText = value;
-                  });
-                },
-              ),
-            ),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
-                ),
-                itemCount: filteredItems.length,
-                itemBuilder: (BuildContext context, int index) {
-                  String item = filteredItems[index];
-                  int ind = items.indexOf(item);
-                  bool isSelected = selectedItems.contains(item);
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        toggleSelection(item);
-                      });
-                    },
-                    child: Card(
-                      elevation: 3,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.all(Radius.elliptical(20, 20)),
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: const InputDecoration(
+                        hintText: '재료를 입력해주세요',
+                        border: OutlineInputBorder(),
                       ),
-                      child: Stack(
-                        children: [
-                          SizedBox(
-                            width: double.infinity,
-                            height: double.infinity,
-                            child: Image.asset(
-                              imagePaths[ind], // 여기에 이미지 파일의 경로를 지정해주세요.
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Positioned.fill(
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(20, 20)),
+                      onChanged: (value) {
+                        setState(() {
+                          searchText = value;
+                        });
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style:
+                        ElevatedButton.styleFrom(fixedSize: const Size(1, 55)),
+                    child: const Icon(Icons.menu),
+                  )
+                ],
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                  ),
+                  itemCount: filteredItems.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    String item = filteredItems[index];
+                    int ind = items.indexOf(item);
+                    bool isSelected = selectedItems.contains(item);
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          toggleSelection(item);
+                        });
+                      },
+                      child: Card(
+                        elevation: 3,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.elliptical(20, 20)),
+                        ),
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              height: double.infinity,
+                              child: Image.asset(
+                                imagePaths[ind], // 여기에 이미지 파일의 경로를 지정해주세요.
+                                fit: BoxFit.fill,
                               ),
-                              child: Align(
-                                alignment: const Alignment(1, 1),
-                                child: Text(
-                                  items[ind],
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
+                            ),
+                            Positioned.fill(
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.all(
+                                      Radius.elliptical(20, 20)),
+                                ),
+                                child: Align(
+                                  alignment: const Alignment(1, 1),
+                                  child: Text(
+                                    items[ind],
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Positioned(
-                              child: Checkbox(
-                                  value: isSelected,
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      toggleSelection(items[index]);
-                                    });
-                                  }))
-                        ],
+                            Positioned(
+                                child: Checkbox(
+                                    value: isSelected,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        toggleSelection(items[index]);
+                                      });
+                                    }))
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () => 11,
-                  child: const Text("선택항목 보기"),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => 11,
-                  child: const Text("레시피 찾기!"),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-          ],
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () => 11,
+                child: const Text("레시피 찾기!"),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
