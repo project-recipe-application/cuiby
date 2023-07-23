@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/recipe_select/widgets/recipe.dart';
+import 'package:recipe_application/recipe_select/widgets/recipe.dart';
 
 class Recipe_Select extends StatefulWidget {
   const Recipe_Select({super.key});

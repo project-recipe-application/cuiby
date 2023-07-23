@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/home_screen/home_screen.dart';
-import 'RecipeScreen/Recipe_Viewer.dart';
+import 'package:recipe_application/home_screen/home_screen.dart';
 
 void main() {
   runApp(const App());
@@ -11,7 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: homeScreen(),
     );
   }

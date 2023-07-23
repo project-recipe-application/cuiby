@@ -1,5 +1,5 @@
-name: sk
-description: A new Flutter project.
+name: recipe_application
+description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
+  sdk: '>=3.0.1 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -56,12 +56,31 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+ uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+ assets:
+  - assets/images/image_1.JPG
+  - assets/images/image_2.JPG
+  - assets/images/image_3.JPG
+  - assets/images/image_4.JPG
+  - assets/images/image_5.JPG
+  - assets/images/image_6.JPG
+  - assets/images/image_7.JPG
+  - assets/images/image_8.JPG
+  - assets/images/image_9.JPG
+  - assets/images/image_10.JPG
+  - assets/images/image_11.JPG
+  - assets/images/image_12.JPG
+  - assets/images/jump.gif
+  - assets/images/log.gif
+  - assets/images/jump copy.gif
+  - assets/images/log copy.gif
+  - assets/images/jump copy 2.gif
+  - assets/images/log copy 2.gif
+  - assets/images/jump copy 3.gif
+  - assets/images/log copy 3.gif
+  - assets/images/kerby.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

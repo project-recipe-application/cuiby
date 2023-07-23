@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:recipe_app/RecipeScreen/Recipe.dart';
+import 'package:recipe_application/RecipeScreen/Recipe.dart';
 
 class RecipeViewer extends StatelessWidget {
   final List<Recipe> recipes = [];

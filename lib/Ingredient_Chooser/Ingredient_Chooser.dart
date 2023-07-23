@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Ingredient_Chooser extends StatefulWidget {
   const Ingredient_Chooser({Key? key}) : super(key: key);
 
@@ -9,40 +8,39 @@ class Ingredient_Chooser extends StatefulWidget {
 }
 
 class _MyAppState extends State<Ingredient_Chooser> {
-  
-String searchText = '';
+  String searchText = '';
 
-List<String> items = [
-  'Item 1',
-  'Item 2',
-  'Item 3',
-  'Item 4',
-  'Item 5',
-  'Item 6',
-  'Item 7',
-  'Item 8',
-  'Item 9',
-  'Item 10',
-  'Item 11',
-  'Item 12',
-];
+  List<String> items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+    'Item 10',
+    'Item 11',
+    'Item 12',
+  ];
 
-List<String> imagePaths = [
-  'assets/images/image_1.JPG',
-  'assets/images/image_2.JPG',
-  'assets/images/image_3.JPG',
-  'assets/images/image_4.JPG',
-  'assets/images/image_5.JPG',
-  'assets/images/image_6.JPG',
-  'assets/images/image_7.JPG',
-  'assets/images/image_8.JPG',
-  'assets/images/image_9.JPG',
-  'assets/images/image_10.JPG',
-  'assets/images/image_11.JPG',
-  'assets/images/image_12.JPG',
-];
+  List<String> imagePaths = [
+    'assets/images/image_1.JPG',
+    'assets/images/image_2.JPG',
+    'assets/images/image_3.JPG',
+    'assets/images/image_4.JPG',
+    'assets/images/image_5.JPG',
+    'assets/images/image_6.JPG',
+    'assets/images/image_7.JPG',
+    'assets/images/image_8.JPG',
+    'assets/images/image_9.JPG',
+    'assets/images/image_10.JPG',
+    'assets/images/image_11.JPG',
+    'assets/images/image_12.JPG',
+  ];
 
-List<String> selectedItems = [];
+  List<String> selectedItems = [];
   void toggleSelection(String item) {
     setState(() {
       if (selectedItems.contains(item)) {

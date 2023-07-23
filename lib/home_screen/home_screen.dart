@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/recipe_select/Recipe_Select.dart';
-import 'package:recipe_app/Ingredient_Chooser/Ingredient_Chooser.dart';
+import 'package:recipe_application/recipe_select/Recipe_Select.dart';
+import 'package:recipe_application/Ingredient_Chooser/Ingredient_Chooser.dart';
 
 void main() {
   runApp(const App());

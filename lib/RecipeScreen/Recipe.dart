@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/RecipeScreen/Detailed_RecipeScreen.dart';
+import 'package:recipe_application/RecipeScreen/Detailed_RecipeScreen.dart';
 
 class Recipe extends StatelessWidget {
   final String recipeName, thumb;
