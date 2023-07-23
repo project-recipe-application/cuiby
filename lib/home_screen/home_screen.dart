@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/recipe_select/Recipe_Select.dart';
+import 'package:recipe_app/Ingredient_Chooser/Ingredient_Chooser.dart';
 
 void main() {
   runApp(const App());
@@ -6,6 +8,17 @@ void main() {
 
 class App extends StatelessWidget {
   const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const homeScreen();
+  }
+}
+
+class homeScreen extends StatelessWidget {
+  const homeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,73 +46,95 @@ class App extends StatelessWidget {
                   width: 200,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/kerby.gif'),
+                      image: AssetImage('assets/images/kerby.gif'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(199, 39, 193, 98),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 10,
-                            offset: const Offset(10, 10),
-                            color: Colors.black.withOpacity(0.2),
-                          )
-                        ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Ingredient_Chooser(),
+                        fullscreenDialog: true,
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 65,
-                        horizontal: 84,
-                      ),
-                      child: const Text(
-                        '루루카의 냉장고 안 \n 지금 바로 확인',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    )
-                  ],
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(199, 39, 193, 98),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10,
+                              offset: const Offset(10, 10),
+                              color: Colors.black.withOpacity(0.2),
+                            )
+                          ],
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 65,
+                          horizontal: 84,
+                        ),
+                        child: const Text(
+                          '루루카의 냉장고 안 \n 지금 바로 확인',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(199, 39, 193, 98),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 10,
-                            offset: const Offset(10, 10),
-                            color: Colors.black.withOpacity(0.2),
-                          )
-                        ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Recipe_Select(),
+                        fullscreenDialog: true,
                       ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 65,
-                        horizontal: 50,
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(199, 39, 193, 98),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10,
+                              offset: const Offset(10, 10),
+                              color: Colors.black.withOpacity(0.2),
+                            )
+                          ],
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 65,
+                          horizontal: 50,
+                        ),
+                        child: const Text(
+                          '루루카의 비밀 요리 레시피 \n 지금 바로 확인',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 22,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      child: const Text(
-                        '루루카의 비밀 요리 레시피 \n 지금 바로 확인',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 22,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             )),

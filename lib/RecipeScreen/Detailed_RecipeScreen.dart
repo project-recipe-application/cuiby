@@ -26,8 +26,7 @@ class Detailed_Recipe extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              //Image.network(thumb),
-              Image.asset(thumb),
+              Image.network(thumb),
               Text(
                 recipeName,
                 style: const TextStyle(),

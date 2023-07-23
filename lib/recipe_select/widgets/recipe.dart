@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/RecipeScreen/Detailed_RecipeScreen.dart';
 
 class Recipe extends StatelessWidget {
   final String img, name;
@@ -14,17 +15,31 @@ class Recipe extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(15),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Image.asset(
-              "assets/images/$img",
-              width: 50,
-              height: 50,
-              fit: BoxFit.fill,
-            ),
-            Text(name)
-          ],
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Detailed_Recipe(
+                  recipeName: name,
+                  thumb: "assets/images/$img",
+                ),
+                fullscreenDialog: true,
+              ),
+            );
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Image.asset(
+                "assets/images/$img",
+                width: 50,
+                height: 50,
+                fit: BoxFit.fill,
+              ),
+              Text(name)
+            ],
+          ),
         ),
       ),
     );
