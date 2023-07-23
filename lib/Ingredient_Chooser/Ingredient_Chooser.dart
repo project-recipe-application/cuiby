@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_application/RecipeScreen/Recipe_Viewer.dart';
 
 class Ingredient_Chooser extends StatefulWidget {
   const Ingredient_Chooser({Key? key}) : super(key: key);
@@ -11,18 +12,18 @@ class _MyAppState extends State<Ingredient_Chooser> {
   String searchText = '';
 
   List<String> items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-    'Item 10',
-    'Item 11',
-    'Item 12',
+    '토마토',
+    '양파',
+    '치즈',
+    '양상추',
+    '오이',
+    '소고기',
+    '김치',
+    '빵',
+    '생선',
+    '소스',
+    '밥',
+    '김',
   ];
 
   List<String> imagePaths = [
@@ -70,8 +71,13 @@ class _MyAppState extends State<Ingredient_Chooser> {
       title: 'searching',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('재료 검색'),
-        ),
+            title: const Text('재료 검색'),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            )),
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -130,9 +136,12 @@ class _MyAppState extends State<Ingredient_Chooser> {
                             SizedBox(
                               width: double.infinity,
                               height: double.infinity,
-                              child: Image.asset(
-                                imagePaths[ind], // 여기에 이미지 파일의 경로를 지정해주세요.
-                                fit: BoxFit.fill,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  imagePaths[ind], // 여기에 이미지 파일의 경로를 지정해주세요.
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             ),
                             Positioned.fill(
@@ -143,7 +152,7 @@ class _MyAppState extends State<Ingredient_Chooser> {
                                       Radius.elliptical(20, 20)),
                                 ),
                                 child: Align(
-                                  alignment: const Alignment(1, 1),
+                                  alignment: const Alignment(0, 1),
                                   child: Text(
                                     items[ind],
                                     style: const TextStyle(
@@ -171,7 +180,17 @@ class _MyAppState extends State<Ingredient_Chooser> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () => 11,
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RecipeViewer(
+                        recipes: selectedItems,
+                      ),
+                      fullscreenDialog: true,
+                    ),
+                  ),
+                },
                 child: const Text("레시피 찾기!"),
               ),
               const SizedBox(height: 20),

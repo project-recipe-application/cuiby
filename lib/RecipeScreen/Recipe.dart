@@ -3,10 +3,12 @@ import 'package:recipe_application/RecipeScreen/Detailed_RecipeScreen.dart';
 
 class Recipe extends StatelessWidget {
   final String recipeName, thumb;
-  const Recipe({
+  late List<String> ingredientList;
+  Recipe({
     super.key,
     required this.recipeName,
     required this.thumb,
+    required this.ingredientList,
   });
 
   Recipe.fromJson(Map<String, dynamic> json, {super.key})

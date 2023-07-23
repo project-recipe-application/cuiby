@@ -1,26 +1,77 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:recipe_application/RecipeScreen/Recipe.dart';
 
+final List<Recipe> TotalRecipe = [
+  Recipe(
+    recipeName: '토마토 파스타',
+    thumb: 'assets/images/jump.gif',
+    ingredientList: const ['토마토', '양파', '치즈'],
+  ),
+  Recipe(
+    recipeName: '샐러드',
+    thumb: 'assets/images/log.gif',
+    ingredientList: const ['양상추', '토마토', '오이'],
+  ),
+  Recipe(
+    recipeName: '불고기',
+    thumb: 'assets/images/jump copy.gif',
+    ingredientList: const ['소고기', '양파', '소스'],
+  ),
+  Recipe(
+    recipeName: '김치찌개',
+    thumb: 'assets/images/log copy.gif',
+    ingredientList: const ['김치', '소고기', '양파'],
+  ),
+  Recipe(
+    recipeName: '햄버거',
+    thumb: 'assets/images/jump copy 2.gif',
+    ingredientList: const ['빵', '소고기', '양상추', '토마토'],
+  ),
+  Recipe(
+    recipeName: '초밥',
+    thumb: 'assets/images/log copy 2.gif',
+    ingredientList: const ['생선', '소스', '밥'],
+  ),
+  Recipe(
+    recipeName: '김치 볶음밥',
+    thumb: 'assets/images/jump copy 3.gif',
+    ingredientList: const ['김치', '밥', '김'],
+  ),
+  Recipe(
+    recipeName: '양상추 찜',
+    thumb: 'assets/images/log copy 3.gif',
+    ingredientList: const ['양상추'],
+  ),
+];
+
 class RecipeViewer extends StatelessWidget {
-  final List<Recipe> recipes = [];
+  final List<String> recipes;
+  RecipeViewer({super.key, required this.recipes});
 
-  RecipeViewer({super.key});
+  List<Recipe> searchResults = [];
 
-  void initList() {
-    int index = Random().nextInt(100);
-    for (int i = 0; i < 7; i++) {
-      recipes.add(Recipe(
-        recipeName: 'RecipeName',
-        thumb: 'https://picsum.photos/id/${index++}/200/200',
-      ));
+  void searchRecipes(List<String> recipe) {
+    if (recipes.isEmpty) {
+      searchResults = TotalRecipe;
+    } else {
+      searchResults.clear();
+      for (Recipe recipe in TotalRecipe) {
+        bool exist = true;
+        for (var ingredients in recipes) {
+          if (!recipe.ingredientList.contains(ingredients)) {
+            exist = false;
+          }
+        }
+        if (exist) {
+          searchResults.add(recipe);
+        }
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    initList();
+    searchRecipes(recipes);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -35,10 +86,10 @@ class RecipeViewer extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               scrollDirection: Axis.vertical,
-              itemCount: recipes.length,
+              itemCount: searchResults.length,
               itemBuilder: (context, index) {
-                var recipe = recipes[index];
-                return recipe;
+                var searchedRecipe = searchResults[index];
+                return searchedRecipe;
               },
               separatorBuilder: (context, index) => const Divider(),
             ),

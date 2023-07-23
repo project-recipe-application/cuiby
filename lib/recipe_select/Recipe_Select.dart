@@ -13,35 +13,35 @@ class _AppState extends State<Recipe_Select> {
   var items = [
     [
       "jump.gif",
-      "점프하는 커비 볶음",
+      "토마토 파스타",
     ],
     [
       "log.gif",
-      "통나무드는 커비 찌개",
+      "샐러드",
     ],
     [
       "jump copy.gif",
-      "점프하는 커비 볶음",
+      "불고기",
     ],
     [
       "log copy.gif",
-      "통나무드는 커비 찌개",
+      "김치찌개",
     ],
     [
       "jump copy 2.gif",
-      "점프하는 커비 볶음",
+      "햄버거",
     ],
     [
       "log copy 2.gif",
-      "통나무드는 커비 찌개",
+      "초밥",
     ],
     [
       "jump copy 3.gif",
-      "점프하는 커비 볶음",
+      "김치 볶음밥",
     ],
     [
       "log copy 3.gif",
-      "통나무드는 커비 찌개",
+      "양상추 찜",
     ],
   ];
   List<List<String>> getFilteredItems() {
