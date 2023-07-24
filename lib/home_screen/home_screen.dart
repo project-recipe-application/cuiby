@@ -25,13 +25,15 @@ class homeScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(183, 87, 202, 147),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           title: const Text(
-            '루루카가 알려주는 냉장고 레시피',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            '『루루카의 비밀 레시피★』',
+            style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w800,
+                color: Color.fromARGB(255, 2, 155, 51)),
           ),
-          centerTitle: true,
-          toolbarHeight: 80,
+          toolbarHeight: 60,
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Padding(
@@ -66,15 +68,21 @@ class homeScreen extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(199, 39, 193, 98),
+                          color: const Color.fromARGB(255, 255, 255, 255),
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 187, 196, 187),
+                            width: 2,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 10,
                               offset: const Offset(10, 10),
                               color: Colors.black.withOpacity(0.2),
-                            )
+                            ),
                           ],
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/jump.gif')),
                         ),
                         padding: const EdgeInsets.symmetric(
                           vertical: 65,
@@ -84,9 +92,9 @@ class homeScreen extends StatelessWidget {
                           '루루카의 냉장고 안 \n 지금 바로 확인',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: Color.fromARGB(255, 2, 155, 51),
                               fontSize: 22,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w800),
                         ),
                       )
                     ],
@@ -110,15 +118,21 @@ class homeScreen extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(199, 39, 193, 98),
+                          color: const Color.fromARGB(255, 255, 255, 255),
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 187, 196, 187),
+                            width: 2,
+                          ),
                           boxShadow: [
                             BoxShadow(
                               blurRadius: 10,
                               offset: const Offset(10, 10),
                               color: Colors.black.withOpacity(0.2),
-                            )
+                            ),
                           ],
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/jump.gif')),
                         ),
                         padding: const EdgeInsets.symmetric(
                           vertical: 65,
@@ -128,9 +142,9 @@ class homeScreen extends StatelessWidget {
                           '루루카의 비밀 요리 레시피 \n 지금 바로 확인',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              color: Color.fromARGB(255, 2, 155, 51),
                               fontSize: 22,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w800),
                         ),
                       ),
                     ],
