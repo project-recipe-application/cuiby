@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_application/RecipeScreen/Recipe_Viewer.dart';
 
-class Ingredient_Chooser extends StatefulWidget {
-  const Ingredient_Chooser({Key? key}) : super(key: key);
+class IngredientChooser extends StatefulWidget {
+  const IngredientChooser({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<Ingredient_Chooser> {
+class _MyAppState extends State<IngredientChooser> {
   String searchText = '';
 
   List<String> items = [

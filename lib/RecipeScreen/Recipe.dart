@@ -33,7 +33,7 @@ class Recipe extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.network(thumb),
+          Image.asset(thumb),
           Column(
             children: [
               Text(

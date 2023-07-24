@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_application/RecipeScreen/Recipe.dart';
 
-final List<Recipe> TotalRecipe = [
+final List<Recipe> totalrecipe = [
   Recipe(
     recipeName: '토마토 파스타',
     thumb: 'assets/images/jump.gif',
@@ -44,18 +44,18 @@ final List<Recipe> TotalRecipe = [
   ),
 ];
 
+List<Recipe> searchResults = [];
+
 class RecipeViewer extends StatelessWidget {
   final List<String> recipes;
-  RecipeViewer({super.key, required this.recipes});
-
-  List<Recipe> searchResults = [];
+  const RecipeViewer({super.key, required this.recipes});
 
   void searchRecipes(List<String> recipe) {
     if (recipes.isEmpty) {
-      searchResults = TotalRecipe;
+      searchResults = totalrecipe;
     } else {
       searchResults.clear();
-      for (Recipe recipe in TotalRecipe) {
+      for (Recipe recipe in totalrecipe) {
         bool exist = true;
         for (var ingredients in recipes) {
           if (!recipe.ingredientList.contains(ingredients)) {
