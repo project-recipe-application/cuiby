@@ -58,15 +58,22 @@ class _AppState extends State<Recipe_Select> {
     var filteredItems = getFilteredItems();
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color(0XFFFFDEFB),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: const Color(0XFFFFDEFB),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           title: const Text(
             '커비 레시피',
+            style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w800,
+                color: Color.fromARGB(255, 2, 155, 51)),
           ),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Color.fromARGB(255, 2, 155, 51),
+            ),
             onPressed: () {
               // 뒤로가기 버튼이 눌렸을 때 수행할 동작을 추가합니다.
               Navigator.pop(context);
@@ -82,9 +89,23 @@ class _AppState extends State<Recipe_Select> {
                   height: 20,
                 ),
                 TextField(
+                  cursorColor: const Color.fromARGB(255, 2, 155, 51),
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 187, 196, 187), width: 2),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(255, 2, 155, 51), width: 2),
+                    ),
                     labelText: '레시피 검색',
+                    labelStyle: TextStyle(
+                      color: Color.fromARGB(255, 187, 196, 187),
+                    ),
+                    floatingLabelStyle: TextStyle(
+                      color: Color.fromARGB(255, 2, 155, 51),
+                    ),
                   ),
                   onChanged: (text) {
                     setState(() {
@@ -92,6 +113,9 @@ class _AppState extends State<Recipe_Select> {
                       filteredItems = getFilteredItems();
                     });
                   },
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 ListView.builder(
                   shrinkWrap: true,
