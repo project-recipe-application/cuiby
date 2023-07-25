@@ -71,9 +71,18 @@ class _MyAppState extends State<IngredientChooser> {
       title: 'searching',
       home: Scaffold(
         appBar: AppBar(
-            title: const Text('재료 검색'),
+            centerTitle: true,
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            title: const Text(
+              '재료 검색',
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w800,
+                  color: Color.fromARGB(255, 2, 155, 51)),
+            ),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
+              color: const Color.fromARGB(255, 2, 155, 51),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -85,24 +94,32 @@ class _MyAppState extends State<IngredientChooser> {
               Row(
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: const InputDecoration(
-                        hintText: '재료를 입력해주세요',
-                        border: OutlineInputBorder(),
+                    child: SizedBox(
+                      height: 56,
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          hintText: '재료를 입력해주세요',
+                          border: OutlineInputBorder(),
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            searchText = value;
+                          });
+                        },
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          searchText = value;
-                        });
-                      },
                     ),
                   ),
                   const SizedBox(width: 10),
                   ElevatedButton(
                     onPressed: () {},
-                    style:
-                        ElevatedButton.styleFrom(fixedSize: const Size(1, 55)),
-                    child: const Icon(Icons.menu),
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(1, 55),
+                      backgroundColor: Colors.white,
+                    ),
+                    child: const Icon(
+                      Icons.menu,
+                      color: Color.fromARGB(255, 2, 155, 51),
+                    ),
                   )
                 ],
               ),
@@ -110,9 +127,9 @@ class _MyAppState extends State<IngredientChooser> {
               Expanded(
                 child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    mainAxisSpacing: 20,
-                    crossAxisSpacing: 20,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
                   ),
                   itemCount: filteredItems.length,
                   itemBuilder: (BuildContext context, int index) {
@@ -164,13 +181,18 @@ class _MyAppState extends State<IngredientChooser> {
                               ),
                             ),
                             Positioned(
-                                child: Checkbox(
-                                    value: isSelected,
-                                    onChanged: (bool? value) {
-                                      setState(() {
-                                        toggleSelection(items[index]);
-                                      });
-                                    }))
+                                left: -7,
+                                top: -7,
+                                child: Transform.scale(
+                                  scale: 0.8,
+                                  child: Checkbox(
+                                      value: isSelected,
+                                      onChanged: (bool? value) {
+                                        setState(() {
+                                          toggleSelection(items[index]);
+                                        });
+                                      }),
+                                )),
                           ],
                         ),
                       ),
@@ -180,6 +202,16 @@ class _MyAppState extends State<IngredientChooser> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(5.0), // 원하는 테두리 반지름 값을 지정합니다.
+                    side: const BorderSide(
+                        color: Color.fromARGB(255, 2, 155, 51),
+                        width: 1.0), // 원하는 테두리 색상과 두께 값을 지정합니다.
+                  ), // 예시로 파란색을 사용합니다. 원하는 색상으로 변경 가능합니다.
+                ),
                 onPressed: () => {
                   Navigator.push(
                     context,
@@ -191,7 +223,14 @@ class _MyAppState extends State<IngredientChooser> {
                     ),
                   ),
                 },
-                child: const Text("레시피 찾기!"),
+                child: const Text(
+                  "레시피 찾기!",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: Color.fromARGB(255, 2, 155, 51),
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
             ],

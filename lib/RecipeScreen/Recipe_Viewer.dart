@@ -44,11 +44,11 @@ final List<Recipe> totalrecipe = [
   ),
 ];
 
-List<Recipe> searchResults = [];
-
 class RecipeViewer extends StatelessWidget {
   final List<String> recipes;
-  const RecipeViewer({super.key, required this.recipes});
+  RecipeViewer({super.key, required this.recipes});
+
+  List<Recipe> searchResults = [];
 
   void searchRecipes(List<String> recipe) {
     if (recipes.isEmpty) {
