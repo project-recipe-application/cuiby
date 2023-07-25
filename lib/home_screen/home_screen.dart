@@ -2,19 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:recipe_application/recipe_select/Recipe_Select.dart';
 import 'package:recipe_application/ingredient_chooser/ingredient_chooser.dart';
 
-void main() {
-  runApp(const App());
-}
-
-class App extends StatelessWidget {
-  const App({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const HomeScreen();
-  }
-}
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -27,13 +14,16 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           title: const Text(
-            '『루루카의 비밀 레시피★』',
+            '루루카의 비밀 레시피★',
             style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w800,
+                fontFamily: 'Maplestory',
+                fontSize: 28,
+                fontWeight: FontWeight.w100,
                 color: Color.fromARGB(255, 2, 155, 51)),
           ),
           toolbarHeight: 60,
+          elevation: 2,
+          shadowColor: const Color.fromARGB(255, 2, 155, 51),
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Padding(
@@ -81,20 +71,28 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.black.withOpacity(0.2),
                             ),
                           ],
-                          image: const DecorationImage(
-                              image: AssetImage('assets/images/jump.gif')),
                         ),
                         padding: const EdgeInsets.symmetric(
-                          vertical: 65,
-                          horizontal: 84,
+                          vertical: 10,
+                          horizontal: 70,
                         ),
-                        child: const Text(
-                          '루루카의 냉장고 안 \n 지금 바로 확인',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 2, 155, 51),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w800),
+                        child: const Column(
+                          children: [
+                            Image(
+                                width: 150,
+                                height: 150,
+                                image:
+                                    AssetImage('assets/images/vegetable.png')),
+                            Text(
+                              '루루카의 냉장고 속',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Maplestory',
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ],
                         ),
                       )
                     ],
@@ -131,20 +129,27 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.black.withOpacity(0.2),
                             ),
                           ],
-                          image: const DecorationImage(
-                              image: AssetImage('assets/images/jump.gif')),
                         ),
                         padding: const EdgeInsets.symmetric(
-                          vertical: 65,
-                          horizontal: 50,
+                          vertical: 10,
+                          horizontal: 60,
                         ),
-                        child: const Text(
-                          '루루카의 비밀 요리 레시피 \n 지금 바로 확인',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 2, 155, 51),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w800),
+                        child: const Column(
+                          children: [
+                            Image(
+                                width: 150,
+                                height: 150,
+                                image: AssetImage('assets/images/cooking.png')),
+                            Text(
+                              '루루카의 요리 레시피',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontFamily: 'Maplestory',
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ],
                         ),
                       ),
                     ],
