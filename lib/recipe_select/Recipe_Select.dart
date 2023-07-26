@@ -93,11 +93,15 @@ class _AppState extends State<Recipe_Select> {
                   decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromARGB(255, 187, 196, 187), width: 2),
+                        color: Color.fromARGB(255, 187, 196, 187),
+                        width: 2,
+                      ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color.fromARGB(255, 2, 155, 51), width: 2),
+                        color: Color.fromARGB(255, 2, 155, 51),
+                        width: 2,
+                      ),
                     ),
                     labelText: '레시피 검색',
                     labelStyle: TextStyle(
