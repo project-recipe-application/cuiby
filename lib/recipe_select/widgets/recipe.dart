@@ -14,7 +14,7 @@ class Recipe extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => Detailed_Recipe(
               recipeName: name,
-              thumb: "assets/images/$img",
+              thumb: "assets/images/recipe/$img",
             ),
             fullscreenDialog: true,
           ),
@@ -36,17 +36,18 @@ class Recipe extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Image.asset(
-                "assets/images/$img",
-                width: 50,
-                height: 50,
+                "assets/images/recipe/$img",
+                width: 100,
+                height: 100,
                 fit: BoxFit.fill,
               ),
               Text(
-                name,
+                "$name\n레시피 보러가기",
                 style: const TextStyle(
                   fontFamily: 'Maplestory',
                   fontSize: 18,
                 ),
+                textAlign: TextAlign.center,
               )
             ],
           ),
