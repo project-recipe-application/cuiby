@@ -59,18 +59,111 @@ flutter:
  uses-material-design: true
  
  assets:
-  - assets/images/image_1.JPG
-  - assets/images/image_2.JPG
-  - assets/images/image_3.JPG
-  - assets/images/image_4.JPG
-  - assets/images/image_5.JPG
-  - assets/images/image_6.JPG
-  - assets/images/image_7.JPG
-  - assets/images/image_8.JPG
-  - assets/images/image_9.JPG
-  - assets/images/image_10.JPG
-  - assets/images/image_11.JPG
-  - assets/images/image_12.JPG
+  - assets/images/item (1).png
+  - assets/images/item (2).png
+  - assets/images/item (3).png
+  - assets/images/item (4).png
+  - assets/images/item (5).png
+  - assets/images/item (6).png
+  - assets/images/item (7).png
+  - assets/images/item (8).png
+  - assets/images/item (9).png
+  - assets/images/item (10).png
+  - assets/images/item (11).png
+  - assets/images/item (12).png
+  - assets/images/item (13).png
+  - assets/images/item (14).png
+  - assets/images/item (15).png
+  - assets/images/item (16).png
+  - assets/images/item (17).png
+  - assets/images/item (18).png
+  - assets/images/item (19).png
+  - assets/images/item (20).png
+  - assets/images/item (21).png
+  - assets/images/item (22).png
+  - assets/images/item (23).png
+  - assets/images/item (24).png
+  - assets/images/item (25).png
+  - assets/images/item (26).png
+  - assets/images/item (27).png
+  - assets/images/item (28).png
+  - assets/images/item (29).png
+  - assets/images/item (30).png
+  - assets/images/item (31).png
+  - assets/images/item (32).png
+  - assets/images/item (33).png
+  - assets/images/item (34).png
+  - assets/images/item (35).png
+  - assets/images/item (36).png
+  - assets/images/item (37).png
+  - assets/images/item (38).png
+  - assets/images/item (39).png
+  - assets/images/item (40).png
+  - assets/images/item (41).png
+  - assets/images/item (42).png
+  - assets/images/item (43).png
+  - assets/images/item (44).png
+  - assets/images/item (45).png
+  - assets/images/item (46).png
+  - assets/images/item (47).png
+  - assets/images/item (48).png
+  - assets/images/item (49).png
+  - assets/images/item (50).png
+  - assets/images/item (51).png
+  - assets/images/item (52).png
+  - assets/images/item (53).png
+  - assets/images/item (54).png
+  - assets/images/item (55).png
+  - assets/images/item (56).png
+  - assets/images/item (57).png
+  - assets/images/item (58).png
+  - assets/images/item (59).png
+  - assets/images/item (60).png
+  - assets/images/item (61).png
+  - assets/images/item (62).png
+  - assets/images/item (63).png
+  - assets/images/item (64).png
+  - assets/images/item (65).png
+  - assets/images/item (66).png
+  - assets/images/item (67).png
+  - assets/images/item (68).png
+  - assets/images/item (69).png
+  - assets/images/item (70).png
+  - assets/images/item (71).png
+  - assets/images/item (72).png
+  - assets/images/item (73).png
+  - assets/images/item (74).png
+  - assets/images/item (75).png
+  - assets/images/item (76).png
+  - assets/images/item (77).png
+  - assets/images/item (78).png
+  - assets/images/item (79).png
+  - assets/images/item (80).png
+  - assets/images/item (81).png
+  - assets/images/item (82).png
+  - assets/images/item (83).png
+  - assets/images/item (84).png
+  - assets/images/item (85).png
+  - assets/images/item (86).png
+  - assets/images/item (87).png
+  - assets/images/item (88).png
+  - assets/images/item (89).png
+  - assets/images/item (90).png
+  - assets/images/item (91).png
+  - assets/images/item (92).png
+  - assets/images/item (93).png
+  - assets/images/item (94).png
+  - assets/images/item (95).png
+  - assets/images/item (96).png
+  - assets/images/item (97).png
+  - assets/images/item (98).png
+  - assets/images/item (99).png
+  - assets/images/item (100).png
+  - assets/images/item (101).png
+  - assets/images/item (102).png
+  - assets/images/item (103).png
+  - assets/images/item (104).png
+  - assets/images/item (105).png
   - assets/images/jump.gif
   - assets/images/log.gif
   - assets/images/jump copy.gif
@@ -87,7 +180,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
-  # An image asset can refer to one or more resolution-specific "variants", see
+  # An item asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
   # For details regarding adding assets from package dependencies, see
