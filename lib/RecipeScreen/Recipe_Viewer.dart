@@ -74,17 +74,35 @@ class RecipeViewer extends StatelessWidget {
     searchRecipes(recipes);
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 60,
+        elevation: 2,
+        shadowColor: const Color.fromARGB(255, 2, 155, 51),
         centerTitle: true,
-        backgroundColor: Colors.blue.withOpacity(0.7),
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 22,
+          ),
+          color: const Color.fromARGB(255, 2, 155, 51),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           "Recommende Recipes",
-          style: TextStyle(fontSize: 13),
+          style: TextStyle(
+            color: Color.fromARGB(255, 2, 155, 51),
+            fontSize: 22,
+            fontFamily: 'Maplestory',
+          ),
         ),
       ),
       body: Column(
         children: [
           Expanded(
             child: ListView.separated(
+              padding: const EdgeInsets.symmetric(vertical: 20),
               scrollDirection: Axis.vertical,
               itemCount: searchResults.length,
               itemBuilder: (context, index) {
