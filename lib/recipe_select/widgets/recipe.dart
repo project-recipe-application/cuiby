@@ -41,7 +41,13 @@ class Recipe extends StatelessWidget {
                 height: 50,
                 fit: BoxFit.fill,
               ),
-              Text(name)
+              Text(
+                name,
+                style: const TextStyle(
+                  fontFamily: 'Maplestory',
+                  fontSize: 18,
+                ),
+              )
             ],
           ),
         ),

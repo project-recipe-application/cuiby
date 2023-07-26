@@ -62,10 +62,14 @@ class _AppState extends State<Recipe_Select> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          toolbarHeight: 60,
+          elevation: 2,
+          shadowColor: const Color.fromARGB(255, 2, 155, 51),
           title: const Text(
             '커비 레시피',
             style: TextStyle(
-                fontSize: 22,
+                fontFamily: 'Maplestory',
+                fontSize: 28,
                 fontWeight: FontWeight.w800,
                 color: Color.fromARGB(255, 2, 155, 51)),
           ),
@@ -105,9 +109,11 @@ class _AppState extends State<Recipe_Select> {
                     ),
                     labelText: '레시피 검색',
                     labelStyle: TextStyle(
+                      fontFamily: 'Maplestory',
                       color: Color.fromARGB(255, 187, 196, 187),
                     ),
                     floatingLabelStyle: TextStyle(
+                      fontFamily: 'Maplestory',
                       color: Color.fromARGB(255, 2, 155, 51),
                     ),
                   ),

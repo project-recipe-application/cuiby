@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           title: const Text(
             '루루카의 비밀 레시피★',
