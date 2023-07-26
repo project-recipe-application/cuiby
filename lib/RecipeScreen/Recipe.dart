@@ -30,24 +30,54 @@ class Recipe extends StatelessWidget {
           ),
         );
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: [
-          Image.asset(thumb),
-          Column(
-            children: [
-              Text(
-                recipeName,
-                style: const TextStyle(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: const Color.fromARGB(255, 187, 196, 187),
+                  width: 2,
+                ),
               ),
-              const SizedBox(
-                height: 10,
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset(
+                      thumb,
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.fill,
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          recipeName,
+                          style: const TextStyle(
+                            fontFamily: 'Maplestory',
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          'About Recipe...',
+                          style: TextStyle(
+                            fontFamily: 'Maplestory',
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              const Text(
-                'About Recipe...',
-                style: TextStyle(),
-              )
-            ],
+            ),
           ),
         ],
       ),
