@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_application/recipe_select/widgets/recipe.dart';
 
 class Recipe_Select extends StatefulWidget {
-  const Recipe_Select({super.key});
+  final String category;
+  const Recipe_Select({super.key, required this.category});
 
   @override
   State<Recipe_Select> createState() => _AppState();
@@ -10,6 +11,7 @@ class Recipe_Select extends StatefulWidget {
 
 class _AppState extends State<Recipe_Select> {
   var searchText = '';
+  var category = '';
   var items = [
     [
       "1.png",
@@ -143,16 +145,21 @@ class _AppState extends State<Recipe_Select> {
     ],
   ];
   List<List<String>> getFilteredItems() {
+    print(items[1][2]);
     if (searchText.isEmpty) {
-      return items;
+      return items.where((item) => (item[2] == category)).toList();
     } else {
-      return items.where((item) => item[1].contains(searchText)).toList();
+      return items
+          .where(
+              (item) => (item[1].contains(searchText) && item[2] == category))
+          .toList();
     }
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    category = widget.category;
     var filteredItems = getFilteredItems();
     return MaterialApp(
       home: Scaffold(

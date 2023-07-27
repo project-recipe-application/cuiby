@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_application/recipe_select/Recipe_Select.dart';
 import 'package:recipe_application/ingredient_chooser/ingredient_chooser.dart';
+import 'package:recipe_application/category_select/category_select.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -107,7 +107,7 @@ class HomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Recipe_Select(),
+                        builder: (context) => const Category_select(),
                         fullscreenDialog: true,
                       ),
                     );
