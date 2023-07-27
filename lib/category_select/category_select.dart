@@ -40,55 +40,42 @@ class AppState extends State<Category_select> {
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: const Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 20,
-            ),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Category_card(
-                      category: "밥",
-                      img: "log.gif",
-                    ),
-                    Category_card(
-                      category: "반찬",
-                      img: "log.gif",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Category_card(
-                      category: "국",
-                      img: "log.gif",
-                    ),
-                    Category_card(
-                      category: "면",
-                      img: "log.gif",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Category_card(
-                      category: "간식",
-                      img: "log.gif",
-                    ),
-                  ],
-                ),
-              ],
-            )),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 20,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Category_card(
+                    category: "밥",
+                    img: "rice.png",
+                  ),
+                  Category_card(
+                    category: "반찬",
+                    img: "side.png",
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Category_card(
+                    category: "국",
+                    img: "soup.png",
+                  ),
+                  Category_card(
+                    category: "면",
+                    img: "noodle.png",
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

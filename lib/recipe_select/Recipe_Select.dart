@@ -61,7 +61,7 @@ class _AppState extends State<Recipe_Select> {
     [
       "16.png",
       "고구마 스틱",
-      "간식",
+      "반찬",
     ],
     [
       "18.png",
@@ -111,7 +111,7 @@ class _AppState extends State<Recipe_Select> {
     [
       "39.png",
       "떡볶이",
-      "간식",
+      "반찬",
     ],
     [
       "41.png",
@@ -136,7 +136,7 @@ class _AppState extends State<Recipe_Select> {
     [
       "47.png",
       "고구마 맛탕",
-      "간식",
+      "반찬",
     ],
     [
       "48.png",
@@ -145,7 +145,6 @@ class _AppState extends State<Recipe_Select> {
     ],
   ];
   List<List<String>> getFilteredItems() {
-    print(items[1][2]);
     if (searchText.isEmpty) {
       return items.where((item) => (item[2] == category)).toList();
     } else {
@@ -198,6 +197,9 @@ class _AppState extends State<Recipe_Select> {
                   height: 20,
                 ),
                 TextField(
+                  style: const TextStyle(
+                    fontFamily: 'Maplestory',
+                  ),
                   cursorColor: const Color.fromARGB(255, 2, 155, 51),
                   decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
