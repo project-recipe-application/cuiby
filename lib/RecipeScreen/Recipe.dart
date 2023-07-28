@@ -78,7 +78,7 @@ class Recipe extends StatelessWidget {
                           height: 10,
                         ),
                         const Text(
-                          'About Recipe...',
+                          '자세히보기',
                           style: TextStyle(
                             fontFamily: 'Maplestory',
                           ),

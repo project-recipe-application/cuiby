@@ -13,7 +13,7 @@ class RecipeViewer extends StatelessWidget {
 
   void searchRecipes(List<String> recipe) {
     if (selectedIngredients.isEmpty) {
-      searchResults = Recipes;
+      searchResults = [];
     } else {
       searchResults.clear();
       for (Recipe recipe in Recipes) {
@@ -53,7 +53,7 @@ class RecipeViewer extends StatelessWidget {
           },
         ),
         title: const Text(
-          "Recommende Recipes",
+          "추천 레시피",
           style: TextStyle(
             color: Color.fromARGB(255, 2, 155, 51),
             fontSize: 22,
@@ -63,18 +63,31 @@ class RecipeViewer extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: ListView.separated(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              scrollDirection: Axis.vertical,
-              itemCount: searchResults.length,
-              itemBuilder: (context, index) {
-                var searchedRecipe = searchResults[index];
-                return searchedRecipe;
-              },
-              separatorBuilder: (context, index) => const Divider(),
+          if (selectedIngredients.isEmpty)
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 275, horizontal: 91),
+              child: const Text(
+                "추천 레시피가 없어요 ㅠㅠ",
+                style: TextStyle(
+                  fontFamily: 'Maplestory',
+                  fontSize: 20,
+                ),
+              ),
+            )
+          else
+            Expanded(
+              child: ListView.separated(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                scrollDirection: Axis.vertical,
+                itemCount: searchResults.length,
+                itemBuilder: (context, index) {
+                  var searchedRecipe = searchResults[index];
+                  return searchedRecipe;
+                },
+                separatorBuilder: (context, index) => const Divider(),
+              ),
             ),
-          ),
         ],
       ),
     );
