@@ -48,7 +48,7 @@ class AppState extends State<Category_select> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Category_card(
                     category: "밥",
@@ -61,7 +61,7 @@ class AppState extends State<Category_select> {
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Category_card(
                     category: "국",

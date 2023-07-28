@@ -40,7 +40,7 @@ class Category_card extends StatelessWidget {
         child: Column(
           children: [
             Image(
-                width: 150,
+                width: 140,
                 height: 150,
                 image: AssetImage('assets/images/$img')),
             Text(
