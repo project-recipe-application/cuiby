@@ -174,112 +174,107 @@ class Detailed_Recipe extends StatelessWidget {
               fontFamily: 'Maplestory', color: Color.fromARGB(255, 2, 155, 51)),
         ),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            //padding: const EdgeInsets.symmetric(horizontal: 0),
-            child: Row(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        padding: const EdgeInsets.symmetric(horizontal: 45),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Image.asset(thumb),
-                    ),
-                    Text(
-                      recipeName,
-                      style: const TextStyle(
-                        fontFamily: 'Maplestory',
-                        fontSize: 30,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    SizedBox(
-                      width: 300,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "[재료]",
-                            style: TextStyle(
-                              fontFamily: 'Maplestory',
-                              fontSize: 18,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          for (var line in ingredients)
-                            Column(
-                              children: [
-                                Text(
-                                  line,
-                                  softWrap: true,
-                                  style: const TextStyle(
-                                    fontFamily: 'Maplestory',
-                                    fontSize: 15,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                )
-                              ],
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      "[만드는 방법]",
-                      style: TextStyle(
-                        fontFamily: 'Maplestory',
-                        fontSize: 18,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      width: 300,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          for (var line in instruction)
-                            Column(
-                              children: [
-                                Text(
-                                  line,
-                                  softWrap: true,
-                                  style: const TextStyle(
-                                    fontFamily: 'Maplestory',
-                                    fontSize: 15,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                )
-                              ],
-                            ),
-                        ],
-                      ),
-                    )
-                  ],
+                const SizedBox(
+                  height: 20,
                 ),
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: Image.asset(thumb),
+                ),
+                Text(
+                  recipeName,
+                  style: const TextStyle(
+                    fontFamily: 'Maplestory',
+                    fontSize: 30,
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "[재료]",
+                        style: TextStyle(
+                          fontFamily: 'Maplestory',
+                          fontSize: 18,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      for (var line in ingredients)
+                        Column(
+                          children: [
+                            Text(
+                              line,
+                              softWrap: true,
+                              style: const TextStyle(
+                                fontFamily: 'Maplestory',
+                                fontSize: 15,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "[만드는 방법]",
+                  style: TextStyle(
+                    fontFamily: 'Maplestory',
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (var line in instruction)
+                        Column(
+                          children: [
+                            Text(
+                              line,
+                              softWrap: true,
+                              style: const TextStyle(
+                                fontFamily: 'Maplestory',
+                                fontSize: 15,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        ),
+                    ],
+                  ),
+                )
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
