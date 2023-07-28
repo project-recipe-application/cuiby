@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  youtube_player_flutter:
   flutter:
     sdk: flutter
 
@@ -204,6 +205,7 @@ flutter:
     - assets/images/item (103).png
     - assets/images/item (104).png
     - assets/images/item (105).png
+    - assets/Recipes.txt
     # To add assets to your application, add an assets section, like this:
     # assets:
     #   - images/a_dot_burr.jpeg

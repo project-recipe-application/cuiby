@@ -4,11 +4,22 @@ import 'package:recipe_application/RecipeScreen/Detailed_RecipeScreen.dart';
 class Recipe extends StatelessWidget {
   final String recipeName, thumb;
   late List<String> ingredientList;
+  late List<String> instructions = [];
+  late String link;
   Recipe({
     super.key,
     required this.recipeName,
     required this.thumb,
     required this.ingredientList,
+  });
+
+  Recipe.parsed({
+    super.key,
+    required this.recipeName,
+    required this.thumb,
+    required this.ingredientList,
+    required this.instructions,
+    required this.link,
   });
 
   Recipe.fromJson(Map<String, dynamic> json, {super.key})

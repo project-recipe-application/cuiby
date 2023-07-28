@@ -511,7 +511,7 @@ class _MyAppState extends State<IngredientChooser> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => RecipeViewer(
-                            recipes: selectedItems,
+                            selectedIngredients: selectedItems,
                           ),
                           fullscreenDialog: true,
                         ),

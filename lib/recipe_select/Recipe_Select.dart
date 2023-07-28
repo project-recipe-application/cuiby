@@ -35,7 +35,7 @@ class _AppState extends State<Recipe_Select> {
     ],
     [
       "6.png",
-      "들기름 계란 프라이",
+      "들기름 달걀프라이",
       "반찬",
     ],
     [

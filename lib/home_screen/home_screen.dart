@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_application/ingredient_chooser/ingredient_chooser.dart';
 import 'package:recipe_application/category_select/category_select.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:recipe_application/RecipeScreen/Detailed_RecipeScreen.dart';
+import 'package:recipe_application/RecipeScreen/Recipe.dart';
+import 'package:recipe_application/RecipeScreen/Recipe_Viewer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -9,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ParseRecipe();
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -160,5 +165,76 @@ class HomeScreen extends StatelessWidget {
             )),
       ),
     );
+  }
+
+  Future<void> ParseRecipe() async {
+    List<Recipe> recipes = [];
+
+    // 에셋 폴더에 있는 텍스트 파일 경로
+    String assetPath = 'assets/Recipes.txt';
+
+    // 에셋 파일 읽기
+    String fileContents = await rootBundle.loadString(assetPath);
+
+    // 텍스트 파일을 라인별로 분리하여 리스트로 변환
+    List<String> SplitedRecipes = fileContents.split('_');
+
+    int index = 1;
+
+    for (var tempRecipe in SplitedRecipes) {
+      List<String> lines = tempRecipe.split('\n');
+
+      // 데이터 파싱
+      String title = lines[0];
+      List<String> ingredients = [];
+      List<String> instructions = [];
+      String link = "";
+
+      bool isIngredientsSection = false;
+      bool isInstructionsSection = false;
+      bool isLink = false;
+
+      for (var line in lines.sublist(1)) {
+        if (line.startsWith("[재료]")) {
+          isIngredientsSection = true;
+          continue;
+        } else if (line.startsWith("[만드는 법]")) {
+          isIngredientsSection = false;
+          isInstructionsSection = true;
+          continue;
+        } else if (line.startsWith("[링크]")) {
+          isInstructionsSection = false;
+          isLink = true;
+          continue;
+        }
+
+        if (isIngredientsSection) {
+          ingredients.add(line.trim());
+        } else if (isInstructionsSection) {
+          instructions.add(line.trim());
+        } else if (isLink) {
+          link = line.trim();
+          isLink = false;
+        }
+      }
+
+      String thumb = "assets/images/recipe/$index.png";
+
+      Recipe recipe = Recipe.parsed(
+        recipeName: title,
+        ingredientList: ingredients,
+        instructions: instructions,
+        link: link,
+        thumb: thumb,
+      );
+
+      if (link != "") {
+        recipes.add(recipe);
+        index++;
+      }
+    }
+
+    Detailed_Recipe.Recipes = recipes;
+    RecipeViewer.Recipes = recipes;
   }
 }
