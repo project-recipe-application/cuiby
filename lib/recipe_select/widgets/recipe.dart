@@ -29,6 +29,13 @@ class Recipe extends StatelessWidget {
             color: const Color.fromARGB(255, 187, 196, 187),
             width: 2,
           ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 10,
+              offset: const Offset(5, 5),
+              color: Colors.black.withOpacity(0.2),
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(15),
