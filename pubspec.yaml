@@ -57,14 +57,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/jump.gif
-    - assets/images/log.gif
-    - assets/images/jump copy.gif
-    - assets/images/log copy.gif
-    - assets/images/jump copy 2.gif
-    - assets/images/log copy 2.gif
-    - assets/images/jump copy 3.gif
-    - assets/images/log copy 3.gif
     - assets/images/kerby.gif
     - assets/images/rice.png
     - assets/images/side.png

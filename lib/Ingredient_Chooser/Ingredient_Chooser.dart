@@ -334,11 +334,13 @@ class _MyAppState extends State<IngredientChooser> {
     List<String> filteredItems = getFilteredItems();
 
     return MaterialApp(
-      title: 'searching',
       home: Scaffold(
         appBar: AppBar(
             centerTitle: true,
             backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+            toolbarHeight: 60,
+            elevation: 2,
+            shadowColor: const Color.fromARGB(255, 2, 155, 51),
             title: const Text(
               '재료 검색',
               style: TextStyle(
